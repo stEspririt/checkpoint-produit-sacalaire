@@ -1,0 +1,59 @@
+PROCEDURE dot_product(ps: INTEGER, t: ARRAY_OF INTEGER,s: ARRAY_OF INTEGER)
+VAR
+    i : INTEGER;
+BEGIN
+    FOR i FROM 0 TO M-1 DO
+       FOR i FROM 0 TO s-2 DO
+           read(t[i+1],s[i+1])
+       END_FOR
+    END_FOR
+    ps := 0
+
+    FOR i FROM 0 TO M-1 DO
+       FOR i FROM 0 TO s-2 DO
+           ps := ps + t[i]*s[i]
+       END_FOR
+    END_FOR
+END
+// Réponse 2 
+PROCEDURE orthogonality(ps: INTEGER, t: ARRAY_OF INTEGER,s: ARRAY_OF INTEGER)
+VAR
+    i := integer;
+BEGIN
+    IF (ps=0) THEN
+        read(ps)
+    END_IF
+END
+
+//avec une fonction question 3
+
+FUNCTION dot_product() : integer
+VAR
+    ps : integer
+BEGIN
+    FOR i FROM 0 TO M-1 DO
+       FOR i FROM 0 TO s-2 DO
+           read(t[i+1],s[i+1])
+       END_FOR
+    END_FOR
+    ps := 0
+
+    FOR i FROM 0 TO M-1 DO
+       FOR i FROM 0 TO s-2 DO
+           ps := ps + t[i]*s[i]
+       END_FOR
+    END_FOR
+    RETURN ps;
+END
+
+ALGORITHM produit_scalaire
+VAR
+    tab: ARRAY_OF INTEGER[t][s];
+    i,ps: INTEGER;
+BEGIN
+    //Calcul produitscalaire avec une procedure
+   dot_product(ps,tab);
+
+   // avec une fonction
+   ps := dot_product(ps,tab);
+END
